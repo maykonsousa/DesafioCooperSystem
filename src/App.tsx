@@ -1,9 +1,14 @@
 import React from 'react';
+import { Header } from './components/Header';
+import { Main } from './components/Main';
+import { GlobalStyle } from './styles/global';
 
 export const App: React.FC = () => {
   return (
-    <div>
-      <h1>Bora comecar</h1>
-    </div>
+    <>
+      <Header />
+      <Main />
+      <GlobalStyle />
+    </>
   );
 };
