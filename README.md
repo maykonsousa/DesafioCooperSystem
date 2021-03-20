@@ -16,9 +16,9 @@
 
 ## Informações sobre o projeto:
 
-- **Construido em React com Typescript**
+- **Construído em React com Typescript**
 - **Padrão de código configurado com EsLint Prettier e EditorConfig**
-- **Compartilhamento de infooções entre componentes feitos com ContextAPI**
+- **Compartilhamento de informações entre componentes feitos com com o Hook ContextAPI**
 - **Estilização feita com Styled Components**
 
 
