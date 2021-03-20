@@ -46,15 +46,15 @@ export const Repositories: React.FC = () => {
                   </p>
                 </div>
               </Typography>
-              <a
-                href={repository.html_url}
-                className="git-button"
-                rel="noreferrer"
-                target="_blank"
-              >
-                <button type="button">Ver Repositorio</button>
-              </a>
             </AccordionDetails>
+            <a
+              href={repository.html_url}
+              className="git-button"
+              rel="noreferrer"
+              target="_blank"
+            >
+              <button type="button">Ver Repositorio</button>
+            </a>
           </Accordion>
         ))}
       </div>
