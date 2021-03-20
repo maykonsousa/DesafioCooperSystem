@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FiUsers, FiUserCheck, FiStar } from 'react-icons/fi';
 import {
   FaLaptopCode,
@@ -6,42 +6,42 @@ import {
   FaEnvelope,
   FaGlobe,
 } from 'react-icons/fa';
-import profileImg from '../../assets/profile.jpg';
 import { Container } from './styles';
+import { userContext } from '../../context/userContext';
 
 export const ProfileSideBar: React.FC = () => {
+  const { userData } = useContext(userContext);
   return (
     <Container>
-      <img src={profileImg} alt="avatar" />
-      <p className="name">Maykon Sousa</p>
-      <p className="username">maykonsousa</p>
-      <p className="bio">
-        Desenvolvedor web NodeJS | React | React Native | HTML | CSS | Boostrap
-      </p>
+      <img src={userData.avatar_url} alt="avatar" />
+      <p className="name"> {userData.name} </p>
+      <p className="username">{userData.login}</p>
+      <p className="bio">{userData.bio}</p>
       <div className="links">
         <a href="teste">
-          <FiUsers /> Followers
+          <FiUsers /> {`${userData.followers} followers`}
         </a>
         <a href="teste">
-          <FiUserCheck /> following
+          <FiUserCheck /> {`${userData.following} following`}
         </a>
         <a href="teste">
-          <FiStar /> stars
+          <FiStar /> 156 stars
         </a>
       </div>
 
       <div className="informations">
         <p className="job">
-          <FaLaptopCode /> Stefanini Group
+          <FaLaptopCode /> {userData.company}
         </p>
         <p className="job">
-          <FaLocationArrow /> Brasilia/DF
+          <FaLocationArrow />{' '}
+          {userData.location ? userData.location : 'Sem Local'}
         </p>
         <p className="job">
-          <FaEnvelope /> maykon.sousa@hotmail.com
+          <FaEnvelope /> {userData.email ? userData.email : 'Sem email'}
         </p>
         <p className="job">
-          <FaGlobe /> http://maykonsousa.github.io
+          <FaGlobe /> {userData.blog ? userData.blog : 'Sem site'}
         </p>
       </div>
     </Container>
